@@ -1,0 +1,35 @@
+<ul id="blogPostList">
+  {% for entry in entries %}
+    <li>
+      <a href="{{ entry.url }}">
+        <section>
+          <div class="linkContent">
+            <h4>{{ entry.title }}</h4>
+            {% if entry.featuredImage | length %}
+            	{% set featuredImage = "" %}
+            	{% set img_transform = {
+            		mode: 'fit',
+            		width: 400
+            	} %}
+            	{% for asset in entry.featuredImage %}
+            		{% set featuredImage = asset.getUrl(img_transform) %}
+            	{% endfor %}
+            	<img class="img-fluid" src="{{featuredImage}}" alt="{{entry.title}}">
+            {% endif %}
+            {% set paragraphs = entry.body|split('</p>') %}
+            {% set teaser = paragraphs|first ~ '</p>' %}
+            {{ teaser|raw }}
+          </div>
+          <div class="linkDetails">
+            {% set categories = craft.categories.relatedTo(entry).level(1).limit(1) %}
+            {% for category in categories %}
+            <h6><span><i class="fa fa-{{ category.kategoriaIkoni }}"></i></span>{{ category.title }}</h6>
+            {% endfor %}
+            <span>|</span>
+            <time>{{ entry.postDate | date("m.d.Y") }}</time>
+          </div>
+        </section>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,26 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+
+
+<div class="pageHeader">
+  <div class="pageHeaderOverLay">
+    <h3>Tervetuloa</h3>
+    <h1>Digikokin sivulle!</h1>
+    <h5>Opitaan uutta yhdessä.</h5>
+  </div>
+  <div class="pageHeaderImage"></div>
+</div>
+
+<article class="pageWrapper">
+  <div class="pageContainer">
+    <h1>{{ entry.title }}</h1>
+    {{ entry.body }}
+  </div>
+  <div class="pageSidebar">
+    <p>Helvetica tilde sriracha, austin sed hella echo park brunch.  Anim  shoreditch ugh synth, put a bird on it fugiat  adipisicing waistcoat sint  mlkshk tumblr hexagon roof party kitsch vice salvia cold-pressed.</p>
+  </div>
+</article>
+
+{% endblock %}

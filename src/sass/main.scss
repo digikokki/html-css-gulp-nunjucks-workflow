@@ -1,3 +1,111 @@
-body{
+// Varialbes
+$whiteText        : #e5e5e5;
+$blackText        : #222;
+$brandColorLight  : #05477c;
+$brandColorDark   : #065b9f;
+$brandColorActive : #6EC4E9;
 
+$whiteText: #e5e5e5;
+$blackText: #222;
+$brandColorActive: #6EC4E9;
+
+.fa-html5, .html5{
+	color: #f16529;
 }
+.fa-css3, .css3{
+	color: #33a9dc;
+}
+.fa-globe, .globe{
+	color: #6ecd56;
+}
+.fa-code, javascript{
+	color: #f7df1e;
+}
+
+// Imports
+
+// inject:vendor
+@import "src/sass/vendor/_media-queries.scss";
+@import "src/sass/vendor/font-awesome.min.scss";
+@import "src/sass/vendor/scrollpane.scss";
+@import "src/sass/vendor/bootstrap/variables.scss";
+// endinject
+
+// bower:scss
+@import "../../build/bower_components/bootstrap/scss/bootstrap.scss";
+// endbower
+
+// inject:app
+@import "src/sass/bem/_fonts.scss";
+@import "src/sass/bem/_blocks/_blogPost.scss";
+@import "src/sass/bem/_blocks/_footer.scss";
+@import "src/sass/bem/_blocks/_postlinknav.scss";
+@import "src/sass/bem/_blocks/_sidebar.scss";
+@import "src/sass/bem/_blocks/_singlePage.scss";
+// endinject
+
+//Base
+body{
+	height: 100%;
+  @include font("Open sans");
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+#siteWrapper{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#siteContainer{
+	display: flex;
+  flex: 1;
+	@include respond-to($desktop) {
+		overflow: hidden;
+		height: 100vh;
+		margin-top: -100px;
+		padding-top: 100px;
+		position: relative;
+		width: 100%;
+		backface-visibility: hidden;
+		will-change: overflow;
+	}
+	@include respond-to($mobile) {
+		flex-direction: column;
+	}
+}
+
+/*#sidebarWrapper include*/
+
+/*#postLinkWrapper include*/
+
+#contentWrapper{
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	overflow: auto;
+	height: auto;
+	margin: 0 auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
+	@include respond-to($simpleRead) {
+		display: none;
+	}
+}
+
+#instafeed{
+	display: flex;
+	flex-wrap: wrap;
+  flex-direction: row;
+	.instafeedItem{
+		width: 84px;
+		height: 84px;
+		margin: 2px;
+		img{
+			height: 84px;
+		}
+	}
+}
+
+// Include google fonts
+@include import-google-fonts();

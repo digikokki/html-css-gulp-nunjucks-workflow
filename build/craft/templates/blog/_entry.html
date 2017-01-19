@@ -1,0 +1,24 @@
+{% extends "_layout" %}
+
+{% block content %}
+<div class="blogHeader">
+  <div class="blogHeaderOverLay"></div>
+  <div class="blogHeaderImage"></div>
+</div>
+	<article>
+    {% if entry.featuredImage | length %}
+      {% set featuredImage = "" %}
+      {% set img_transform = {
+        mode: 'fit',
+        width: 800
+      } %}
+      {% for asset in entry.featuredImage %}
+        {% set featuredImage = asset.getUrl(img_transform) %}
+      {% endfor %}
+      <img class="img-fluid" src="{{featuredImage}}" alt="{{entry.title}}">
+      <h1>{{ entry.title }}</h1>
+    {% endif %}
+		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+		{{ entry.body }}
+	</article>
+{% endblock %}

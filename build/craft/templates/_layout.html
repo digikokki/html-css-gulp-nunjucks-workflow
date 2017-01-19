@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+    <meta name="description" content="">
+    {% includeCssFile "../../bower_components/jScrollPane/style/jquery.jscrollpane.css" %}
+    {% includeCssFile "/css/main.css" %}
+  </head>
+  <body id="siteWrapper">
+    <div id="siteContainer">
+
+      <section id="sidebarWrapper">
+        {% include "partials/_sidebar.html" %}
+      </section>
+
+      <section id="postLinkWrapper">
+        {% paginate craft.entries.section('blog').limit(blogSettings.postsPerPage) as info, entries %}
+        {% include "partials/_postlinklist.html" %}
+        {% if info.prevUrl %}
+        <a href="{{info.prevUrl}}" class="underline_from_right">&larr; Previous Page</a>
+        {% endif %}
+        {% if info.nextUrl %}
+      	<a href="{{info.nextUrl}}" class="underline_from_left">Next Page &rarr;</a>
+      	{% endif %}
+      </section>
+
+      <section id="contentWrapper">
+        {% block content %}
+        {% endblock %}
+      </section>
+    </div>
+    {% includeJsFile "../../bower_components/jquery/dist/jquery.js" %}
+    {% includeJsFile "../../bower_components/tether/dist/js/tether.js" %}
+    {% includeJsFile "../../bower_components/bootstrap/dist/js/bootstrap.js" %}
+    {% includeJsFile "../../bower_components/jScrollPane/script/jquery.mousewheel.js" %}
+    {% includeJsFile "../../bower_components/jScrollPane/script/mwheelIntent.js" %}
+    {% includeJsFile "../../bower_components/jScrollPane/script/jquery.jscrollpane.js" %}
+    {% includeJsFile "../../bower_components/jScrollPane/script/jquery.jscrollpane.min.js" %}
+    {% includeJsFile "/js/main.js" %}
+  </body>
+</html>
