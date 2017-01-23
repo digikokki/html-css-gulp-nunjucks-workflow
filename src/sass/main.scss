@@ -45,6 +45,7 @@ $brandColorActive: #6EC4E9;
 @import "src/sass/bem/_blocks/_postlinknav.scss";
 @import "src/sass/bem/_blocks/_sidebar.scss";
 @import "src/sass/bem/_blocks/_singlePage.scss";
+@import "src/sass/bem/_blocks/_social-elements.scss";
 // endinject
 
 //Base
@@ -104,19 +105,7 @@ body{
 	}
 }
 
-#instafeed{
-	display: flex;
-	flex-wrap: wrap;
-  flex-direction: row;
-	.instafeedItem{
-		width: 84px;
-		height: 84px;
-		margin: 2px;
-		img{
-			height: 84px;
-		}
-	}
-}
+
 
 // Include google fonts
 @include import-google-fonts();

@@ -70,8 +70,8 @@ $(document).ready(function() {
        userId: '3711207612',
        accessToken: '3711207612.2ad622d.e9c5bfe01e1445e4b9b8ac26768c2ea2',
        clientId: '2ad622df35ab43b2b25e911c31868e44',
-       limit: 9,
-       template: '<a href="{{link}}" class="instafeedItem"><img src="{{image}}" /></a>'
+       limit: 2,
+       template: '<div class="instafeedItem"><a href="{{link}}"><img src="{{image}}" /></a> <p>{{caption}}</p></div>'
    });
    feed.run();
 
@@ -82,5 +82,21 @@ $(document).ready(function() {
     $('.fullHeightSnapScrollWrapper').panelSnap(options);
    });
 
+   function dateFormatter(date) {
+      var monthNames = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+      return "Twiitattu: " + monthNames[date.getMonth()] + "." + date.getDate() + "." + date.getFullYear();
+    }
 
+   var configProfile = {
+    "profile": {"screenName": 'digikokki'},
+    "domId": 'tweets',
+    "maxTweets": 2,
+    "enableLinks": true,
+    "showUser": false,
+    "showTime": true,
+    "dateFunction": dateFormatter,
+    "showRetweet": false,
+    "showInteraction": false
+  };
+  twitterFetcher.fetch(configProfile);
 });

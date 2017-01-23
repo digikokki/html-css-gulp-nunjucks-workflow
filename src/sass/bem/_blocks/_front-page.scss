@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   .sideBySideItemContent{
-
+    position: relative;
   }
 }
 
@@ -32,18 +32,32 @@
       @include font("Montserrat");
     }
   }
-
-
-  .contentItemHeading{
-    h3{
-      margin: 50px 0px;
-      @include font("Montserrat");
+}
+#fronPageRight{
+  h3{
+    @include font("Montserrat");
+    position: absolute;
+    width: 100%;
+    line-height: 1;
+    white-space: nowrap;
+    top: -130px;
+    left: 205px;
+    z-index: 10;
+    font-size: 220px;
+    font-weight: 600;
+    color: white;
+  }
+  h1{
+    position: relative;
+    z-index: 20;
+  }
+  h5{
+    a{
+      color: white;
     }
-    h6{
-      @include font("Open Sans");
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 1.8;
-    }
+  }
+  p{
+    position: relative;
+    z-index: 20;
   }
 }
