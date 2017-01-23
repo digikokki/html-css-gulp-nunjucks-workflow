@@ -398,14 +398,12 @@ $(document).ready(function() {
 
     // Toggle open sidebarWrapper
     $('#brandLogo p').click(function() {
-
       if ($(this).text() == $(this).data("text-swap")) {
         $(this).text($(this).data("text-original"));
       } else {
         $(this).data("text-original", $(this).text());
         $(this).text($(this).data("text-swap"));
       }
-
       $('#sidebarWrapper').toggleClass('open');
       return true;
     });
@@ -442,11 +440,10 @@ $(document).ready(function() {
         window.onresize = function(){ location.reload(); }
       }
     }
-
     // Decoline effect
     (function() {
 			var lineMaker = new LineMaker({
-				parent: {element: document.querySelector(".pageHeader"), position: 'prepend'},
+				parent: {element: document.querySelector(".header"), position: 'prepend'},
         position: 'absolute',
         lines: [
           {top: '92%', left: 50, width: 54, height: 10, color: '#fff', hidden: true, content: 'hello', animation: { duration: 500, easing: 'easeInOutSine', delay: 400, direction: 'LeftRight' }},
@@ -454,7 +451,6 @@ $(document).ready(function() {
           {top: '92%', left: 150, width: 170, height: 10, color: '#065b9f', hidden: true, content: 'hello', animation: { duration: 500, easing: 'easeInOutSine', delay: 550, direction: 'LeftRight' }},
         ]
 			});
-
       setTimeout(function() {
         lineMaker.animateLinesIn();
     	}, 250);
@@ -470,5 +466,13 @@ $(document).ready(function() {
        template: '<a href="{{link}}" class="instafeedItem"><img src="{{image}}" /></a>'
    });
    feed.run();
+
+   jQuery(function($) {
+    var options = {
+      $menu: $('.snapScrollMenu')
+    };
+    $('.fullHeightSnapScrollWrapper').panelSnap(options);
+   });
+
 
 });

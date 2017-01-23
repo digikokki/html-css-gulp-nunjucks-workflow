@@ -24,9 +24,8 @@
   "dependencies": {
     "bootstrap": "v4.0.0-alpha.5",
     "jScrollPane": "^2.0.23",
-    "instafeed.js": "^1.4.1"
+    "instafeed.js": "^1.4.1",
+    "panelsnap": "^0.15.1"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }

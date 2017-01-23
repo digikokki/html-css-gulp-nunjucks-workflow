@@ -1,0 +1,49 @@
+.sideBySideWrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100vh;
+}
+
+.sideBySideItem{
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .sideBySideItemContent{
+
+  }
+}
+
+.sideBySideItemContent{
+  padding: 50px 100px 0px 100px;
+  h1{
+    font-size: 2em;
+    @include font("Montserrat");
+  }
+
+  @include respond-to($smallHeight) {
+    padding: 20px 50px 0px 50px;
+    h1{
+      font-size: 1.5em;
+      @include font("Montserrat");
+    }
+  }
+
+
+  .contentItemHeading{
+    h3{
+      margin: 50px 0px;
+      @include font("Montserrat");
+    }
+    h6{
+      @include font("Open Sans");
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+  }
+}

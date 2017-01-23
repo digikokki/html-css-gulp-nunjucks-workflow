@@ -39,12 +39,23 @@ $brandColorActive: #6EC4E9;
 @import "src/sass/bem/_fonts.scss";
 @import "src/sass/bem/_blocks/_blogPost.scss";
 @import "src/sass/bem/_blocks/_footer.scss";
+@import "src/sass/bem/_blocks/_front-page.scss";
+@import "src/sass/bem/_blocks/_header.scss";
+@import "src/sass/bem/_blocks/_panel-scroll.scss";
 @import "src/sass/bem/_blocks/_postlinknav.scss";
 @import "src/sass/bem/_blocks/_sidebar.scss";
 @import "src/sass/bem/_blocks/_singlePage.scss";
 // endinject
 
 //Base
+*{
+	box-sizing: border-box;
+}
+
+:after, :before {
+  box-sizing: border-box
+}
+
 body{
 	height: 100%;
   @include font("Open sans");

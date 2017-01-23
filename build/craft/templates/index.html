@@ -2,25 +2,38 @@
 
 {% block content %}
 
-
-
-<div class="pageHeader">
-  <div class="pageHeaderOverLay">
-    <h3>Tervetuloa</h3>
-    <h1>Digikokin sivulle!</h1>
-    <h5>Opitaan uutta yhdessä.</h5>
+<div class="sideBySideWrapper">
+  <div class="sideBySideItem" id="fronPageLeft">
+    <div class="sideBySideItemContent">
+      <h1>{{ entry.title }}</h1>
+      {{ entry.body }}
+    </div>
   </div>
-  <div class="pageHeaderImage"></div>
+  <div class="sideBySideItem" id="fronPageRight">
+    <div class="snapScrollMenu">
+      <a href="/first" data-panel="first"></a>
+      <a href="/second" data-panel="second"></a>
+      <a href="/third" data-panel="third"></a>
+    </div>
+    <section class="fullHeightSnapScroll">
+    <div class="fullHeightSnapScrollWrapper">
+      <section class="fullHeightSnapScrollItem" data-panel="first">
+        <div class="sideBySideItemContent">
+          <h1>First</h1>
+          <p>1
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a eros lacus. Nulla mi ante, accumsan a sodales quis, elementum a purus. Vestibulum blandit est mi, id pellentesque lacus venenatis at. Ut sagittis neque libero, sed sagittis nunc pharetra non. Morbi pharetra eros sit amet nunc tempus, ut vestibulum neque luctus. Sed nisi erat, viverra vitae lectus non, pulvinar elementum ex. Proin quis faucibus magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sapien risus, dapibus porta massa non, ornare venenatis nulla. Cras tristique vel arcu quis molestie. Fusce congue libero non arcu sodales, et euismod dolor venenatis.
+          </p>
+        </div>
+      </section>
+      <section class="fullHeightSnapScrollItem" data-panel="second">
+        <h1>Second</h1>
+      </section>
+      <section class="fullHeightSnapScrollItem" data-panel="third">
+        <h1>Third</h1>
+      </section>
+    </div>
+    </section>
+  </div>
 </div>
-
-<article class="pageWrapper">
-  <div class="pageContainer">
-    <h1>{{ entry.title }}</h1>
-    {{ entry.body }}
-  </div>
-  <div class="pageSidebar">
-    <p>Helvetica tilde sriracha, austin sed hella echo park brunch.  Anim  shoreditch ugh synth, put a bird on it fugiat  adipisicing waistcoat sint  mlkshk tumblr hexagon roof party kitsch vice salvia cold-pressed.</p>
-  </div>
-</article>
 
 {% endblock %}
