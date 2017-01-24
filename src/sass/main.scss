@@ -48,6 +48,7 @@ $brandColorActive: #6EC4E9;
 @import "src/sass/bem/_blocks/_social-elements.scss";
 // endinject
 
+//desktop
 //Base
 *{
 	box-sizing: border-box;
@@ -72,24 +73,18 @@ body{
 #siteContainer{
 	display: flex;
   flex: 1;
-	@include respond-to($desktop) {
-		overflow: hidden;
-		height: 100vh;
-		margin-top: -100px;
-		padding-top: 100px;
-		position: relative;
-		width: 100%;
-		backface-visibility: hidden;
-		will-change: overflow;
-	}
-	@include respond-to($mobile) {
-		flex-direction: column;
-	}
 }
 
 /*#sidebarWrapper include*/
 
 /*#postLinkWrapper include*/
+
+.contentContainer{
+	display: flex;
+	@include respond-to($simpleRead) {
+		flex-direction: column;
+	}
+}
 
 #contentWrapper{
 	display: flex;
@@ -101,11 +96,33 @@ body{
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: none;
 	@include respond-to($simpleRead) {
-		display: none;
+
 	}
 }
 
+//#tablet
 
+@include respond-to($desktop) {
+#siteContainer{
+		overflow: hidden;
+		height: 100vh;
+		margin-top: -100px;
+		padding-top: 100px;
+		position: relative;
+		width: 100%;
+		backface-visibility: hidden;
+		will-change: overflow;
+	}
+}
+
+//#mobile
+@include respond-to($mobile) {
+#siteContainer{
+	display: flex;
+  flex: 1;
+		flex-direction: column;
+	}
+}
 
 // Include google fonts
 @include import-google-fonts();

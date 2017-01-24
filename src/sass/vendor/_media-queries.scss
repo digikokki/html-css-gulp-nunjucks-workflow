@@ -1,11 +1,14 @@
+
 $mobile             : '(max-width: 480px)';
-$tablet             : '(max-width: 767px)';
+$tablet             : '(max-width: 920px)';
+$desktop            : '(min-width: 1200px)';
 $simpleRead         : '(max-width: 1200px)';
+
 $smallHeight        : '(max-height: 740px)';
 
 $tablet-portrait    : '(max-width: 767px)';
 $tablet-landscape   : '(min-width: 768px) and (max-width: 979px)';
-$desktop            : '(min-width: 1200px)';
+
 $non-retina         : 'screen and (-webkit-max-device-pixel-ratio: 1)';
 $retina             : '(min--moz-device-pixel-ratio: 1.5),
                     (-o-min-device-pixel-ratio: 3/2),

@@ -1,4 +1,4 @@
-#sidebarWrapper{
+ #sidebarWrapper{
   flex: 0 0 70px;
   padding: 10px;
   position: relative;
@@ -73,6 +73,9 @@
         span{
 
         }
+        @include respond-to($mobile) {
+          display: none;
+        }
       }
       @include respond-to($mobile) {
         width: 50px;
@@ -93,16 +96,19 @@
   #sidebarContent{
     display: flex;
     flex-direction: column;
-    flex: 0 0 0px;
     width: 100%;
     color: white;
     font-size: 0.7em;
     transition: .2s ease-out all;
     transform: translateX(0%);
+    @include respond-to($mobile) {
+      display: none;
+    }
     &.open{
       flex: 0 0 365px;
       @include respond-to($mobile) {
         flex: 0 0 315px;
+        display: block;
       }
       #aboutSite{
         display: block;

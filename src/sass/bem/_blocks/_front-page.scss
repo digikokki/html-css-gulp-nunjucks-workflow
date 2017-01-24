@@ -5,6 +5,12 @@
   align-items: stretch;
   align-content: stretch;
   height: 100vh;
+  @include respond-to($simpleRead) {
+    //max-height: 400px;
+  }
+  @include respond-to($tablet) {
+    flex-direction: column;
+  }
 }
 
 .sideBySideItem{
@@ -13,24 +19,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .sideBySideItemContent{
-    position: relative;
+  @include respond-to($tablet) {
+    min-height: 300px;
   }
+
 }
 
 .sideBySideItemContent{
+  position: relative;
   padding: 50px 100px 0px 100px;
   h1{
     font-size: 2em;
     @include font("Montserrat");
   }
-
   @include respond-to($smallHeight) {
     padding: 20px 50px 0px 50px;
     h1{
       font-size: 1.5em;
       @include font("Montserrat");
     }
+  }
+  @include respond-to($mobile) {
+    padding: 20px;
   }
 }
 #fronPageRight{
@@ -40,7 +50,7 @@
     width: 100%;
     line-height: 1;
     white-space: nowrap;
-    top: -130px;
+    top: -80px;
     left: 205px;
     z-index: 10;
     font-size: 220px;
@@ -60,4 +70,9 @@
     position: relative;
     z-index: 20;
   }
+}
+
+
+@include respond-to($simpleRead) {
+
 }

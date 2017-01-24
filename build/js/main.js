@@ -433,7 +433,8 @@ $(document).ready(function() {
       if (mq.matches) {
         console.log('window width is at least 1200px');
         $('#postLinkWrapper').jScrollPane({
-          autoReinitialise: true
+          autoReinitialise: true,
+          mouseWheelSpeed: 50
         });
       } else {
         console.log('window width is less than 1200px');
