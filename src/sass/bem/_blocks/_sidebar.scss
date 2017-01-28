@@ -6,21 +6,9 @@
   background-color: #005189;
   transition: .2s ease-out all;
   transform: translateX(0%);
-  @include respond-to($mobile) {
-    display: flex;
-    flex: 0;
-    flex-direction: column;
-  }
   &.open{
     flex: 0 0 250px;
     padding: 20px;
-    @include respond-to($tablet) {
-      flex: 0 0 70px;
-    }
-    @include respond-to($mobile) {
-      flex: 0;
-      height: 60px;
-    }
     #aboutSite{
       display: block;
     }
@@ -70,28 +58,12 @@
         font-size: 0.4rem;
         text-transform: uppercase;
         cursor: pointer;
-        span{
-
-        }
-        @include respond-to($mobile) {
-          display: none;
-        }
-      }
-      @include respond-to($mobile) {
-        width: 50px;
-        margin: 0 auto;
-        height: 100%;
-        align-self: flex-start;
-        margin: 0;
       }
   }
   #mobileNav{
     display: none;
     color: white;
     text-transform: uppercase;
-    @include respond-to($mobile) {
-      display: block;
-    }
   }
   #sidebarContent{
     display: flex;
@@ -101,15 +73,8 @@
     font-size: 0.7em;
     transition: .2s ease-out all;
     transform: translateX(0%);
-    @include respond-to($mobile) {
-      display: none;
-    }
     &.open{
       flex: 0 0 365px;
-      @include respond-to($mobile) {
-        flex: 0 0 315px;
-        display: block;
-      }
       #aboutSite{
         display: block;
       }
@@ -211,6 +176,63 @@
     &:hover{
       background: $brandColorActive;
       color: white;
+    }
+  }
+}
+
+
+//DesktopFirst
+@include respond-to($desktop) {
+
+}
+
+//LaptopFirst
+@include respond-to($laptop) {
+
+}
+
+//TabletFirst
+@include respond-to($tablet) {
+  #sidebarWrapper{
+    &.open{
+      flex: 0 0 70px;
+    }
+  }
+}
+
+//MobileFirst
+@include respond-to($mobile) {
+  #sidebarWrapper{
+    display: flex;
+    flex: 0;
+    flex-direction: column;
+    &.open{
+      flex: 0;
+      height: 60px;
+    }
+    #brandLogo{
+    width: 50px;
+    margin: 0 auto;
+    height: 100%;
+    align-self: flex-start;
+    margin: 0;
+      p{
+        display: none;
+      }
+    }
+    #mobileNav{
+      display: block;
+    }
+    #sidebarContent{
+      display: none;
+      &.open{
+        flex: 0 0 315px;
+        display: block;
+        #siteLinks{
+          margin: 30px 0px 0px 0px;
+          padding: 10px 0px 0px 0px;
+        }
+      }
     }
   }
 }

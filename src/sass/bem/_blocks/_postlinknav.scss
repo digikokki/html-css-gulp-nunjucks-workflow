@@ -2,21 +2,12 @@
   flex: 0 0 340px;
   position: relative;
   background: $brandColorLight;
-  @include respond-to($simpleRead) {
-    flex: 1;
-  }
 }
 #blogPostList{
   margin: 0;
   padding: 20px 0px 0px 20px;
   width: 80%;
   list-style: none;
-  @include respond-to($simpleRead) {
-    padding: 20px 0px 0px 55px;
-  }
-  @include respond-to($mobile) {
-    width: 95%;
-  }
   &:after{
   	position: absolute;
   	content: "";
@@ -144,5 +135,34 @@
         }
       }
     }
+  }
+}
+
+
+
+//DesktopFirst
+@include respond-to($desktop) {
+
+}
+
+//LaptopFirst
+@include respond-to($laptop) {
+  #postLinkWrapper{
+    flex: 1;
+  }
+  #blogPostList{
+    padding: 20px 0px 0px 55px;
+  }
+}
+
+//TabletFirst
+@include respond-to($tablet) {
+
+}
+
+//MobileFirst
+@include respond-to($mobile) {
+  #blogPostList{
+    width: 95%;
   }
 }

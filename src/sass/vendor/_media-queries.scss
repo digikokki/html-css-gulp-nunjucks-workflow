@@ -1,7 +1,9 @@
 
 $mobile             : '(max-width: 480px)';
 $tablet             : '(max-width: 920px)';
+$laptop             : '(max-width: 1200px)';
 $desktop            : '(min-width: 1200px)';
+
 $simpleRead         : '(max-width: 1200px)';
 
 $smallHeight        : '(max-height: 740px)';
@@ -24,4 +26,25 @@ $retina             : '(min--moz-device-pixel-ratio: 1.5),
     @media only screen and #{$media} {
         @content;
     }
+}
+
+
+//DesktopFirst
+@include respond-to($desktop) {
+
+}
+
+//LaptopFirst
+@include respond-to($laptop) {
+
+}
+
+//TabletFirst
+@include respond-to($tablet) {
+
+}
+
+//MobileFirst
+@include respond-to($mobile) {
+
 }

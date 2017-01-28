@@ -35,9 +35,6 @@
       height: 36px;
       width: 120%;
     }
-    @include respond-to($tablet) {
-      font-size: 2rem;
-    }
   }
   h3{
     @include font("Montserrat");
@@ -64,4 +61,29 @@
   background-image: url('../img/main-bg.jpg');
   background-position: 50% 20%;
   background-size: cover;
+}
+
+
+//DesktopFirst
+@include respond-to($desktop) {
+
+}
+
+//LaptopFirst
+@include respond-to($laptop) {
+  .headerOverLay{
+    h1{
+      font-size: 2rem;
+    }
+  }
+}
+
+//TabletFirst
+@include respond-to($tablet) {
+
+}
+
+//MobileFirst
+@include respond-to($mobile) {
+
 }

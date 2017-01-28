@@ -43,9 +43,6 @@
     display: flex;
     margin-bottom: 10px;
     margin: 10px 0px;
-    @include respond-to($mobile) {
-      flex-direction: column;
-    }
 		img{
       margin-right: 10px;
 			height: 84px;
@@ -56,4 +53,28 @@
       line-height: 1.8;
     }
 	}
+}
+
+//DesktopFirst
+@include respond-to($desktop) {
+
+}
+
+//LaptopFirst
+@include respond-to($laptop) {
+
+}
+
+//TabletFirst
+@include respond-to($tablet) {
+
+}
+
+//MobileFirst
+@include respond-to($mobile) {
+  #instafeed{
+    .instafeedItem{
+      flex-direction: column;  
+    }
+  }
 }

@@ -4,25 +4,12 @@
   justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
-  height: 100vh;
-  @include respond-to($simpleRead) {
-    //max-height: 400px;
-  }
-  @include respond-to($tablet) {
-    flex-direction: column;
-  }
 }
 
 .sideBySideItem{
   flex: 1;
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  @include respond-to($tablet) {
-    min-height: 300px;
-  }
-
 }
 
 .sideBySideItemContent{
@@ -39,10 +26,8 @@
       @include font("Montserrat");
     }
   }
-  @include respond-to($mobile) {
-    padding: 20px;
-  }
 }
+
 #fronPageRight{
   h3{
     @include font("Montserrat");
@@ -73,6 +58,49 @@
 }
 
 
-@include respond-to($simpleRead) {
+//DesktopFirst
+@include respond-to($desktop) {
+  .sideBySideWrapper{
+    height: 100vh;
+  }
+  .sideBySideItem{
+    justify-content: center;
+    align-items: center;
+  }
+  .fullHeightSnapScrollItem{
+    justify-content: center;
+    align-items: center;
+  }
+}
 
+//LaptopFirst
+@include respond-to($laptop) {
+  .sideBySideWrapper{
+    min-height: 400px;
+  }
+  .sideBySideItem{
+    justify-content: center;
+    align-items: center;
+  }
+  .fullHeightSnapScrollItem{
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+//TabletFirst
+@include respond-to($tablet) {
+  .sideBySideWrapper{
+    flex-direction: column;
+  }
+  .sideBySideItem{
+    min-height: 300px;
+  }
+}
+
+//MobileFirst
+@include respond-to($mobile) {
+  .sideBySideItemContent{
+    padding: 20px;
+  }
 }
