@@ -1,71 +1,38 @@
- #sidebarWrapper{
-  flex: 0 0 70px;
+#aboutSiteWrapper{
   padding: 10px;
   position: relative;
   @include font("Montserrat");
   background-color: #005189;
-  transition: .2s ease-out all;
-  transform: translateX(0%);
-  &.open{
-    flex: 0 0 250px;
-    padding: 20px;
-    #aboutSite{
-      display: block;
-    }
-    #siteLinks{
-      margin: 50px 0px;
-      padding: 30px 0px;
-      border-top: solid 1px $brandColorDark;
-      border-bottom: solid 1px $brandColorDark;
-      a{
-        color: white;
-        span{
-          margin-left: 10px;
-          display: inline-block!important;
-        }
-      }
-      li{
-        margin-bottom: 16px;
-        padding: 0px!important;
-        background: none!important;
-        border: none!important;
-        text-align: left!important;
-      }
-    }
-    #socialMediaLinks{
-      flex-direction: row;
-      a{
-        background: none;
-        border: none;
-      }
-    }
-  }
+  flex: 0 0 250px;
+  padding: 20px;
+
   #sidebarHeading{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    text-align: center;
+    h5{
+      color: white;
+    }
+    p{
+      width: 200px;
+      color: white;
+      font-size: 0.7rem;
+      cursor: pointer;
+    }
   }
+
   #brandLogo{
-      width: 80%;
+      width: 100px;
       margin: 20px auto;
       border-radius: 100px;
       text-align: center;
       img:not(.png) {
         width: 100%;
       }
-      p{
-        color: white;
-        font-size: 0.4rem;
-        text-transform: uppercase;
-        cursor: pointer;
-      }
   }
-  #mobileNav{
-    display: none;
-    color: white;
-    text-transform: uppercase;
-  }
-  #sidebarContent{
+
+  #aboutSiteContent{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -73,6 +40,37 @@
     font-size: 0.7em;
     transition: .2s ease-out all;
     transform: translateX(0%);
+    text-align: center;
+    ul{
+      margin: 0;
+      margin-top: 10px;
+      padding: 0;
+      li{
+        list-style: none;
+      }
+    }
+    #siteLinks{
+      margin: 20px 0px;
+      margin-top: 5px;
+      padding: 20px 0px 0px 0px;
+      border-top: solid 1px $brandColorDark;
+      border-bottom: solid 1px $brandColorDark;
+      a{
+        text-transform: uppercase;
+        color: white;
+        span{
+          display: none;
+        }
+      }
+      li{
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+        border: solid 1px $brandColorDark;
+        background: $brandColorLight;
+      }
+    }
     &.open{
       flex: 0 0 365px;
       #aboutSite{
@@ -109,37 +107,48 @@
         }
       }
     }
-    ul{
-      margin: 0;
-      margin-top: 10px;
-      padding: 0;
-      li{
-        list-style: none;
+
+  }
+
+
+  #aboutSite{
+    display: block;
+  }
+  #siteLinks{
+    margin: 50px 0px;
+    padding: 30px 0px;
+    border-top: solid 1px $brandColorDark;
+    border-bottom: solid 1px $brandColorDark;
+    a{
+      color: white;
+      span{
+        margin-left: 10px;
+        display: inline-block!important;
       }
     }
-    #siteLinks{
-      margin: 20px 0px;
-      margin-top: 5px;
-      padding: 20px 0px 0px 0px;
-      border-top: solid 1px $brandColorDark;
-      border-bottom: solid 1px $brandColorDark;
-      a{
-        text-transform: uppercase;
-        color: white;
-        span{
-          display: none;
-        }
-      }
-      li{
-        margin-bottom: 20px;
-        text-align: center;
-        padding: 10px;
-        border-radius: 5px;
-        border: solid 1px $brandColorDark;
-        background: $brandColorLight;
-      }
+    li{
+      margin-bottom: 16px;
+      padding: 0px!important;
+      background: none!important;
+      border: none!important;
+      text-align: left!important;
     }
   }
+  #socialMediaLinks{
+    flex-direction: row;
+    a{
+      background: none;
+      border: none;
+    }
+  }
+
+
+  #mobileNav{
+    display: none;
+    color: white;
+    text-transform: uppercase;
+  }
+
 }
 #aboutSite{
   display: none;
@@ -179,7 +188,6 @@
     }
   }
 }
-
 
 //DesktopFirst
 @include respond-to($desktop) {

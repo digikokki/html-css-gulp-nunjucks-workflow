@@ -397,6 +397,7 @@ var desktopOnly = window.matchMedia( "(min-width: 1200px)" );
 $(document).ready(function() {
 
     // Toggle open sidebarWrapper
+    /*
     $('#brandLogo p').click(function() {
       if ($(this).text() == $(this).data("text-swap")) {
         $(this).text($(this).data("text-original"));
@@ -415,6 +416,7 @@ $(document).ready(function() {
         console.log('Ei');
       }
     }
+    */
 
     // Toggle open nav link on mobile size
     $('#mobileNav').click(function() {
