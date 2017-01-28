@@ -443,7 +443,7 @@ $(document).ready(function() {
         window.onresize = function(){ location.reload(); }
       }
     }
-    // Decoline effect
+    /*/ Decoline effect
     (function() {
 			var lineMaker = new LineMaker({
 				parent: {element: document.querySelector(".header"), position: 'prepend'},
@@ -458,7 +458,8 @@ $(document).ready(function() {
         lineMaker.animateLinesIn();
     	}, 250);
 		})();
-
+    */
+    
     // Instafeed
     var feed = new Instafeed({
        get: 'user',
