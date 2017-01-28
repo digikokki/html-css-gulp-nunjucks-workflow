@@ -7,7 +7,6 @@
 }
 
 .sideBySideItem{
-  flex: 1;
   position: relative;
   display: flex;
 }
@@ -27,8 +26,11 @@
     }
   }
 }
-
+#fronPageLeft{
+  flex:3;
+}
 #fronPageRight{
+  flex:1;
   h3{
     @include font("Montserrat");
     position: absolute;
@@ -64,12 +66,16 @@
     height: 100vh;
   }
   .sideBySideItem{
+    /*
     justify-content: center;
     align-items: center;
+    */
   }
   .fullHeightSnapScrollItem{
+    /*
     justify-content: center;
     align-items: center;
+    */
   }
 }
 
