@@ -74,10 +74,6 @@ body{
   flex: 1;
 }
 
-.contentContainer{
-	display: flex;
-}
-
 #contentWrapper{
 	display: flex;
 	flex: 1;
@@ -87,6 +83,10 @@ body{
 	margin: 0 auto;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: none;
+}
+
+.contentContainer{
+	display: flex;
 }
 
 //DesktopFirst
