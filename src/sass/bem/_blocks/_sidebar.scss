@@ -1,6 +1,5 @@
  #sidebarWrapper{
   flex: 0 0 70px;
-  padding: 10px;
   position: relative;
   @include font("Montserrat");
   background-color: #005189;
@@ -8,7 +7,6 @@
   transform: translateX(0%);
   &.open{
     flex: 0 0 250px;
-    padding: 20px;
     #aboutSite{
       display: block;
     }
@@ -46,19 +44,16 @@
     justify-content: space-between;
   }
   #brandLogo{
-      width: 80%;
-      margin: 20px auto;
-      border-radius: 100px;
-      text-align: center;
-      img:not(.png) {
-        width: 100%;
-      }
-      p{
-        color: white;
-        font-size: 0.4rem;
-        text-transform: uppercase;
-        cursor: pointer;
-      }
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 100px;
+    text-align: center;
+    p{
+      color: white;
+      font-size: 0.4rem;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
   }
   #mobileNav{
     display: none;
@@ -118,11 +113,23 @@
       }
     }
     #siteLinks{
+      position: relative;
       margin: 20px 0px;
       margin-top: 5px;
       padding: 20px 0px 0px 0px;
       border-top: solid 1px $brandColorDark;
       border-bottom: solid 1px $brandColorDark;
+      &:after{
+        /*
+        content: 'Kategoriat';
+        position: absolute;
+        top: 45%;
+        left: -5px;
+        transform: rotate(90deg);
+	      transform-origin: left top 0;
+        font-size: 0.7em;
+        */
+      }
       a{
         text-transform: uppercase;
         color: white;
@@ -180,19 +187,35 @@
   }
 }
 
+.sidebarContainer{
+  padding: 10px 20px;
+}
 
 //DesktopFirst
 @include respond-to($desktop) {
-
+  #brandLogo{
+    img:not(.png) {
+      width: 50%;
+    }
+  }
 }
 
 //LaptopFirst
 @include respond-to($laptop) {
-
+  #brandLogo{
+    img:not(.png) {
+      width: 50%;
+    }
+  }
 }
 
 //TabletFirst
 @include respond-to($tablet) {
+  #brandLogo{
+    img:not(.png) {
+      width: 100%;
+    }
+  }
   #sidebarWrapper{
     &.open{
       flex: 0 0 70px;
