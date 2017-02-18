@@ -13,15 +13,21 @@
   </head>
 <body id="siteWrapper">
   <div id="siteContainer">
-      <section id="sidebarWrapper" class="open">
-        {% include "includes/sidebar.html" %}
-      </section>
-      <section id="postLinkWrapper">
-        {% include "includes/postlinknav.html" %}
-        <a href="{{info.prevUrl}}" class="underline_from_right">&larr; Edelliset</a>
-        <a href="{{info.prevUrl}}" class="underline_from_right"> Seuraavat &rarr;</a>
-      </section>
 
+    <section id="sidebarWrapper">
+      {% include "includes/sidebar.html" %}
+    </section>
+    <section id="mainWrapper">
+    </section>
+
+
+
+    <!--
+    <section id="postLinkWrapper">
+      {% include "includes/postlinknav.html" %}
+      <a href="{{info.prevUrl}}" class="underline_from_right">&larr; Edelliset</a>
+      <a href="{{info.prevUrl}}" class="underline_from_right"> Seuraavat &rarr;</a>
+    </section>
     <div class="mainContainer">
       <section id="mainWrapper">
         {% include "includes/header.html" %}
@@ -29,6 +35,7 @@
         {% include "includes/footer.html" %}
       </section>
     </div>
+      -->
   </div>
 
 

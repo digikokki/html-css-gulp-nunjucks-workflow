@@ -422,13 +422,15 @@ $(document).ready(function() {
     });
 
     /* JavaScript Media Queries */
+    /*
     if (matchMedia) {
     	var mq = window.matchMedia("(min-width: 1200px)");
     	mq.addListener(WidthChange);
     	WidthChange(mq);
     }
-
+    */
     // media query change
+    /*
     function WidthChange(mq) {
       if (mq.matches) {
         console.log('window width is at least 1200px');
@@ -441,6 +443,8 @@ $(document).ready(function() {
         window.onresize = function(){ location.reload(); }
       }
     }
+    */
+
     // Decoline effect
     (function() {
 			var lineMaker = new LineMaker({
@@ -458,6 +462,7 @@ $(document).ready(function() {
 		})();
 
     // Instafeed
+    /*
     var feed = new Instafeed({
        get: 'user',
        userId: '3711207612',
@@ -467,7 +472,7 @@ $(document).ready(function() {
        template: '<div class="instafeedItem"><a href="{{link}}"><img src="{{image}}" /></a> <p>{{caption}}</p></div>'
    });
    feed.run();
-
+   */
    jQuery(function($) {
     var options = {
       $menu: $('.snapScrollMenu')
@@ -475,6 +480,7 @@ $(document).ready(function() {
     $('.fullHeightSnapScrollWrapper').panelSnap(options);
    });
 
+   /*
    function dateFormatter(date) {
       var monthNames = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
       return "Twiitattu: " + monthNames[date.getMonth()] + "." + date.getDate() + "." + date.getFullYear();
@@ -492,4 +498,5 @@ $(document).ready(function() {
     "showInteraction": false
   };
   twitterFetcher.fetch(configProfile);
+  */
 });

@@ -9,17 +9,22 @@ $whiteText: #e5e5e5;
 $blackText: #222;
 $brandColorActive: #6EC4E9;
 
+$html5: 					#f16529 !default;
+$css3: 						#33a9dc !default;
+$globe: 					#6ecd56 !default;
+$javascript: 			#f7df1e !default;
+
 .fa-html5, .html5{
-	color: #f16529;
+	color: $html5;
 }
 .fa-css3, .css3{
-	color: #33a9dc;
+	color: $css3;
 }
 .fa-globe, .globe{
-	color: #6ecd56;
+	color: $globe;
 }
-.fa-code, javascript{
-	color: #f7df1e;
+.fa-code, .javascript{
+	color: $javascript;
 }
 
 // Imports
@@ -74,10 +79,6 @@ body{
   flex: 1;
 }
 
-.mainContainer{
-	display: flex;
-}
-
 #mainWrapper{
 	display: flex;
 	flex: 1;
@@ -87,6 +88,8 @@ body{
 	margin: 0 auto;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: none;
+	//background-image: url('../img/main-bg.jpg');
+	background-size: cover;
 }
 
 .contentWrapper{

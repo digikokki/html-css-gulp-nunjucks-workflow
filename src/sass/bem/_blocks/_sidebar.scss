@@ -1,43 +1,11 @@
  #sidebarWrapper{
+  box-sizing: border-box;
   flex: 0 0 70px;
   position: relative;
   @include font("Montserrat");
   background-color: #005189;
   transition: .2s ease-out all;
   transform: translateX(0%);
-  &.open{
-    flex: 0 0 250px;
-    #aboutSite{
-      display: block;
-    }
-    #siteLinks{
-      margin: 50px 0px;
-      padding: 30px 0px;
-      border-top: solid 1px $brandColorDark;
-      border-bottom: solid 1px $brandColorDark;
-      a{
-        color: white;
-        span{
-          margin-left: 10px;
-          display: inline-block!important;
-        }
-      }
-      li{
-        margin-bottom: 16px;
-        padding: 0px!important;
-        background: none!important;
-        border: none!important;
-        text-align: left!important;
-      }
-    }
-    #socialMediaLinks{
-      flex-direction: row;
-      a{
-        background: none;
-        border: none;
-      }
-    }
-  }
   #sidebarHeading{
     display: flex;
     align-items: center;
@@ -45,15 +13,9 @@
   }
   #brandLogo{
     width: 80%;
-    margin: 20px auto;
+    margin: 20px auto 20px auto;
     border-radius: 100px;
     text-align: center;
-    p{
-      color: white;
-      font-size: 0.4rem;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
   }
   #mobileNav{
     display: none;
@@ -68,42 +30,6 @@
     font-size: 0.7em;
     transition: .2s ease-out all;
     transform: translateX(0%);
-    &.open{
-      flex: 0 0 365px;
-      #aboutSite{
-        display: block;
-      }
-      #socialMediaLinks{
-        flex-direction: row;
-        a{
-          background: none;
-          border: none;
-        }
-      }
-      #siteLinks{
-        margin: 50px 0px;
-        padding: 30px 0px;
-        border-top: solid 1px $brandColorDark;
-        border-bottom: solid 1px $brandColorDark;
-        @include respond-to($mobile) {
-          margin: 30px 0px 0px 0px;
-          padding: 10px 0px 0px 0px;
-        }
-        a{
-          color: white;
-          span{
-            display: inline-block!important;
-          }
-        }
-        li{
-          margin-bottom: 16px;
-          padding: 0px!important;
-          background: none!important;
-          border: none!important;
-          text-align: left!important;
-        }
-      }
-    }
     ul{
       margin: 0;
       margin-top: 10px;
@@ -112,77 +38,39 @@
         list-style: none;
       }
     }
-    #siteLinks{
+    .siteLinks{
       position: relative;
       margin: 20px 0px;
       margin-top: 5px;
       padding: 20px 0px 0px 0px;
       border-top: solid 1px $brandColorDark;
-      border-bottom: solid 1px $brandColorDark;
-      &:after{
-        /*
-        content: 'Kategoriat';
-        position: absolute;
-        top: 45%;
-        left: -5px;
-        transform: rotate(90deg);
-	      transform-origin: left top 0;
-        font-size: 0.7em;
-        */
-      }
       a{
         text-transform: uppercase;
-        color: white;
+        /*
         span{
-          display: none;
+          position: absolute;
         }
+        &:hover{
+          span{
+            display: inline-block;
+            margin-left: 15px;
+            width: 150px;
+            text-align: left;
+          }
+        }
+        */
       }
       li{
         margin-bottom: 20px;
         text-align: center;
         padding: 10px;
-        border-radius: 5px;
-        border: solid 1px $brandColorDark;
-        background: $brandColorLight;
-      }
-    }
-  }
-}
-#aboutSite{
-  display: none;
-  margin-bottom: 30px;
-  a{
-    color: $brandColorActive;
-  }
-}
-#siteLinks{
-  a{
-    &:hover{
-      li{
-        background: $brandColorActive!important;
       }
       i{
-        color: white;
+        font-size: 17px;
+        color: white!important;
+        &:hover{
+        }
       }
-    }
-  }
-}
-#socialMediaLinks{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  a{
-    font-size: 1.5em;
-    color: white;
-    text-align: center;
-    margin: 10px 0px;
-    padding: 10px;
-    border-radius: 5px;
-    border: solid 1px $brandColorDark;
-    background: $brandColorLight;
-    &:hover{
-      background: $brandColorActive;
-      color: white;
     }
   }
 }
@@ -191,11 +79,40 @@
   padding: 10px 20px;
 }
 
+//Tablet to Desktop
+@include respond-to($tablet-to-dekstop) {
+  #sidebarContent{
+    .siteLinks{
+      a{
+        span{
+          position: absolute;
+          display: inline-block;
+          opacity:0;
+          transform: translateX(0px);
+          color: white;
+          z-index: 20;
+          transition: all 0.15s ease-in-out;
+        }
+        &:hover{
+          span{
+            display: inline-block;
+            margin-left: 15px;
+            width: 150px;
+            opacity:1;
+            text-align: left;
+            transform: translateX(40px);
+          }
+        }
+      }
+    }
+  }
+}
+
 //DesktopFirst
 @include respond-to($desktop) {
   #brandLogo{
     img:not(.png) {
-      width: 50%;
+      width: 70%;
     }
   }
 }
@@ -204,16 +121,17 @@
 @include respond-to($laptop) {
   #brandLogo{
     img:not(.png) {
-      width: 50%;
+      width: 70%;
     }
   }
+
 }
 
 //TabletFirst
 @include respond-to($tablet) {
   #brandLogo{
     img:not(.png) {
-      width: 100%;
+      width: 70%;
     }
   }
   #sidebarWrapper{
@@ -229,16 +147,16 @@
     display: flex;
     flex: 0;
     flex-direction: column;
-    &.open{
-      flex: 0;
-      height: 60px;
+    justify-content: center;
+    #sidebarHeading{
+      padding: 10px 20px;
     }
     #brandLogo{
-    width: 50px;
-    margin: 0 auto;
-    height: 100%;
-    align-self: flex-start;
-    margin: 0;
+      width: 50px;
+      margin: 0 auto;
+      height: 100%;
+      align-self: flex-start;
+      margin: 0;
       p{
         display: none;
       }
@@ -249,11 +167,42 @@
     #sidebarContent{
       display: none;
       &.open{
-        flex: 0 0 315px;
         display: block;
+        flex: 0 0 100%;
+        .siteLinks{
+          margin: 0px 30px;
+          padding: 10px;
+        }
         #siteLinks{
-          margin: 30px 0px 0px 0px;
-          padding: 10px 0px 0px 0px;
+          border-top: solid 1px $brandColorDark;
+          border-bottom: solid 1px $brandColorDark;
+          a{
+            color: white;
+            span{
+              opacity:1;
+              display: inline-block;
+              margin-left: 15px;
+            }
+          }
+          li{
+            margin: 15px 0px;
+            padding: 0px;
+            background: none;
+            border: none;
+            text-align: left;
+          }
+        }
+        #socialMediaLinks{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          a{
+            background: none;
+            border: none;
+          }
+          li{
+            margin: 0;
+          }
         }
       }
     }
