@@ -1,0 +1,108 @@
+#pageContainer{
+  display: flex;
+  flex: 1 0 auto;
+  position: relative;
+  margin-top: 86px;
+}
+
+#pageContent{
+  flex: 2;
+  position: relative;
+  width: 100%;
+  padding: 2em 12em 0;
+}
+
+#pageSidebar{
+  flex: 0 0 345px;
+  border-left: 1px solid #e4e4e4;
+  background: #F2F6FB;
+}
+
+#pageSidebarContent{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#aboutContent{
+  position: fixed;
+  flex: 1;
+  background: white;
+  width: inherit;
+  padding: 2em 1em 0em;
+  top:87px;
+  height: 45vh;
+  h3{
+    @include font("Montserrat", 600);
+    font-size: 0.6em;
+    color: rgba(0, 0, 0, 0.44);
+    width: 50%;
+    text-transform: uppercase;
+  }
+  h2{
+    @include font("Montserrat", 600);
+    font-size: 1em;
+    width: 100%;
+  }
+  p{
+    font-size: 13px;
+    width: 65%;
+  }
+  img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -10;
+    opacity:0.3;
+  }
+}
+
+article{
+  margin-bottom: 110px;
+  h3{
+    color: rgba(0, 0, 0, 0.44);
+    font-size: 0.9em;
+  }
+  h1{
+    font-size: 2em;
+    @include font("Montserrat", 600);
+  }
+  h2{
+    @include font("Montserrat", 300);
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.44);
+  }
+  header{
+    margin-bottom: 24px;
+  }
+  img{
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+  p{
+    @include font("Crimson Text");
+    font-size: 1.2em;
+  }
+}
+
+
+.decolines {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+  z-index: 10;
+}
+
+.decolines--fixed {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+}
+
+.decoline {
+	position: absolute;
+}

@@ -1,7 +1,6 @@
  #sidebarWrapper{
   box-sizing: border-box;
   flex: 0 0 70px;
-  position: relative;
   @include font("Montserrat");
   background-color: #005189;
   transition: .2s ease-out all;
@@ -81,6 +80,11 @@
 
 //Tablet to Desktop
 @include respond-to($tablet-to-dekstop) {
+  #sidebarWrapper{
+    position: fixed;
+    width: 70px;
+    height: 100%;
+  }
   #sidebarContent{
     .siteLinks{
       a{
@@ -119,6 +123,7 @@
 
 //LaptopFirst
 @include respond-to($laptop) {
+
   #brandLogo{
     img:not(.png) {
       width: 70%;
