@@ -1,9 +1,9 @@
 #topBar{
   display: flex;
   align-items: center;
-  width: 100%;
+  width: inherit;
   height: 86px;
-  padding: 0px 16px;
+  padding: 0em 12em 0;
   border-bottom: 1px solid #F3F3F3;
   h1{
     font-size: 1.5em;
@@ -13,12 +13,11 @@
   }
 }
 
-
 //DesktopFirst
 @include respond-to($desktop) {
   #topBar{
     position: fixed;
-    margin-left: 70px;
+    width: inherit;
     background: white;
     z-index: 50;
   }
@@ -28,7 +27,6 @@
 @include respond-to($laptop) {
   #topBar{
     position: fixed;
-    margin-left: 70px;
     background: white;
     z-index: 50;
   }
@@ -36,7 +34,9 @@
 
 //TabletFirst
 @include respond-to($tablet) {
-
+  #topBar{
+    display: none;
+  }
 }
 
 //MobileFirst

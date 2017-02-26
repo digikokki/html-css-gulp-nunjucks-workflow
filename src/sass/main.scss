@@ -84,6 +84,15 @@ body{
 }
 
 
+/* Styles specific to this particular page */
+#videoLinks
+{
+	width: 100%;
+	height: 100px;
+	overflow: auto;
+}
+
+
 
 //DesktopFirst
 @include respond-to($desktop) {

@@ -445,7 +445,23 @@ $(document).ready(function() {
     }
     */
 
+
+
+    $(function()
+{
+	var settings = {
+		showArrows: true
+	};
+	var pane = $('#videoLinks')
+	pane.jScrollPane(settings);
+	var api = pane.data('jsp');
+	var i = 1;
+
+});
+
+
     // Decoline effect
+    /*
     (function() {
 			var lineMaker = new LineMaker({
 				parent: {element: document.querySelector(".header"), position: 'prepend'},
@@ -460,6 +476,7 @@ $(document).ready(function() {
         lineMaker.animateLinesIn();
     	}, 250);
 		})();
+    */
 
     // Instafeed
     /*
