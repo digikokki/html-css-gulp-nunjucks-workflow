@@ -13,7 +13,7 @@ return array(
 	'server' => 'localhost',
 
 	// The name of the database to select.
-	'database' => 'digikokki_blogi',
+	'database' => 'digikokki_sivusto',
 
 	// The database username to connect with.
 	'user' => 'adminkokki',

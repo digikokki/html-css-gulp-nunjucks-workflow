@@ -1,0 +1,117 @@
+.articleContainer{
+  position: relative;
+  margin-bottom: 110px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #dedede;
+  .shareButton{
+    position: absolute;
+    left: -50px;
+    bottom:40%;
+    font-size: 1.4em;
+    font-weight: 300;
+    color: $brandColorDark;
+  }
+  h3{
+    color: rgba(0, 0, 0, 0.44);
+    font-size: 0.9em;
+    line-height: 1.15;
+    letter-spacing: -.02em;
+  }
+  h1{
+    font-size: 2.5em;
+    @include font("Montserrat", 600);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+  }
+  h2{
+    @include font("Montserrat", 300);
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.44);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+  }
+  h4{
+    font-size: 2em;
+    @include font("Montserrat", 600);
+    margin-bottom: 20px;
+    margin-top: 53px;
+    line-height: 1.15;
+    letter-spacing: -.02em;
+  }
+  header{
+    margin-bottom: 24px;
+  }
+  section{
+    margin-top: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    article{
+
+      flex-basis: 85%;
+      margin-right: 5%;
+    }
+    footer{
+      flex-basis: 15%;
+      color: #999;
+    }
+  }
+  footer{
+    background: none;
+    p{
+      margin: 0;
+      @include font("Montserrat", 300);
+      font-size: 0.8em;
+    }
+    .keywords{
+      margin-top: 8px;
+      a{
+        @include font("Montserrat", 300);
+        font-size: 0.7em;
+        opacity:0.6;
+      }
+    }
+  }
+  img{
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+  p{
+    @include font("Crimson Text");
+    font-size: 1.2em;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+  }
+  ul{
+    margin-top: 29px;
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+    li{
+      @include font("Crimson Text");
+      font-size: 1.2em;
+      line-height: 1.58;
+      letter-spacing: -.003em;
+      margin-left: 30px;
+      margin-bottom: 14px;
+      &:before {
+          padding-top: 4px;
+          padding-right: 15px;
+          content: "•";
+      }
+      a{
+        text-decoration: none;
+        background-image: linear-gradient(to bottom,rgba(0,0,0,.6) 50%,rgba(0,0,0,0) 50%);
+        background-repeat: repeat-x;
+        background-size: 2px .1em;
+        background-position: 0 1.07em;
+      }
+    }
+  }
+  pre{
+    margin-top: 43px;
+    background: rgba(0,0,0,.05);
+    padding: 20px;
+    white-space: pre-wrap;
+  }
+}

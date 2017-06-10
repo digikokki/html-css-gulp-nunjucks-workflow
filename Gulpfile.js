@@ -142,7 +142,7 @@ gulp.task('browser-sync', function () {
    browserSync.init(files,{
         server:{
             baseDir: './build',
-            index: "front.html"
+            index: "index.html"
         }
     })
 });

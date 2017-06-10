@@ -100,12 +100,13 @@
         }
         &:hover{
           span{
+            color: rgba(0,0,0,.44);
             display: inline-block;
             margin-left: 15px;
             width: 150px;
             opacity:1;
             text-align: left;
-            transform: translateX(40px);
+            transform: translateX(30px);
           }
         }
       }
@@ -124,7 +125,6 @@
 
 //LaptopFirst
 @include respond-to($laptop) {
-
   #brandLogo{
     img:not(.png) {
       width: 70%;

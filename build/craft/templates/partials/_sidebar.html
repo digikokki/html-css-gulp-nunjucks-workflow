@@ -1,35 +1,55 @@
-<div id="sidebarHeading">
-  <div id="brandLogo">
-    <a href="/"><img src="/img/digikokki-logo-test.svg"/></a>
-    <p data-text-swap="Piilota">Katso lisätiedot</p>
-  </div>
-  <div id="mobileNav">
-    valikko
-  </div>
-</div>
-
-<div id="sidebarContent">
-  <ul>
-    <li id="aboutSite">
-      {{ digikokkiSivuEsittely.body }}
-    </li>
-    <li>
-      <ul id="siteLinks">
-      {% nav category in craft.categories.group('blogCategories').level(1) %}
-      <a href="{{ category.url }}">
+<div id="pageSidebar">
+  <div id="pageSidebarContent">
+    <div id="aboutContent">
+      <h3>Digikokki</h3>
+      <h2>Andreas Koutsoukos</h2>
+      <p>Sain 2016 ajatuksen perustaa Youtubeen kanavan jossa opastan koodauksen saloihin. Samalla näyttäisin päivittäistä arkeani ja kiinnostustani IT-alasta.</p>
+      <img src="img/profile-image.png"/>
+    </div>
+    <div id="videoContent">
+      <input type="text" name="" value="" placeholder="etsi videota">
+      <ul id="videoLinks">
         <li>
-        <i class="fa fa-{{category.kategoriaIkoni}}"></i>
-        <span>{{ category.title }}</span>
+          <div class="videoThumbnail">
+            <img src="img/karla-alexander-213798.jpg" alt="">
+          </div>
+          <div class="videoInfo">
+            <h4>A Better Way to Make Buttons in Sketch</h4>
+          </div>
         </li>
-      </a>
-      {% endnav %}
+        <li>
+          <div class="videoThumbnail">
+            <img src="img/karla-alexander-213798.jpg" alt="">
+          </div>
+          <div class="videoInfo">
+            <h4>A Better Way to Make Buttons in Sketch</h4>
+          </div>
+        </li>
+        <li>
+          <div class="videoThumbnail">
+            <img src="img/karla-alexander-213798.jpg" alt="">
+          </div>
+          <div class="videoInfo">
+            <h4>A Better Way to Make Buttons in Sketch</h4>
+          </div>
+        </li>
+        <li>
+          <div class="videoThumbnail">
+            <img src="img/karla-alexander-213798.jpg" alt="">
+          </div>
+          <div class="videoInfo">
+            <h4>A Better Way to Make Buttons in Sketch</h4>
+          </div>
+        </li>
+        <li>
+          <div class="videoThumbnail">
+            <img src="img/karla-alexander-213798.jpg" alt="">
+          </div>
+          <div class="videoInfo">
+            <h4>A Better Way to Make Buttons in Sketch</h4>
+          </div>
+        </li>
       </ul>
-    </li>
-  </ul>
-  <div id="socialMediaLinks">
-    <a href="https://www.youtube.com/digikokki" target="_blank"><i class="fa fa-youtube"></i></a>
-    <a href="https://www.facebook.com/digikokki" target="_blank"><i class="fa fa-facebook"></i></a>
-    <a href="https://twitter.com/digikokki" target="_blank"><i class="fa fa-twitter"></i></a>
-    <a href="https://www.instagram.com/digikokki/" target="_blank"><i class="fa fa-instagram"></i></a>
+    </div>
   </div>
 </div>

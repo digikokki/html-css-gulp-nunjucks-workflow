@@ -3,10 +3,11 @@
   align-items: center;
   width: inherit;
   height: 86px;
-  padding: 0em 12em 0;
+  padding-left: 100px;
+  padding-right: 30px;
   border-bottom: 1px solid #F3F3F3;
-  h1{
-    font-size: 1.5em;
+  #pageNameHeading{
+    font-size: 1rem;
     @include font("Montserrat", 800);
     margin: 0;
     text-transform: uppercase;
@@ -35,11 +36,19 @@
 //TabletFirst
 @include respond-to($tablet) {
   #topBar{
-    display: none;
+
   }
 }
 
 //MobileFirst
 @include respond-to($mobile) {
-
+  #topBar{
+    position: relative;
+    display: block;
+    height: auto;
+    margin-top: 15px;
+    padding: 0 0 10px 0px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
 }

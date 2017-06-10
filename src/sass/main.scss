@@ -42,10 +42,11 @@ $javascript: 			#f7df1e !default;
 
 // inject:app
 @import "src/sass/bem/_fonts.scss";
+@import "src/sass/bem/_blocks/_article.scss";
 @import "src/sass/bem/_blocks/_blogPost.scss";
 @import "src/sass/bem/_blocks/_footer.scss";
 @import "src/sass/bem/_blocks/_front-page.scss";
-@import "src/sass/bem/_blocks/_page-container.scss";
+@import "src/sass/bem/_blocks/_page-containers.scss";
 @import "src/sass/bem/_blocks/_panel-scroll.scss";
 @import "src/sass/bem/_blocks/_sidebar.scss";
 @import "src/sass/bem/_blocks/_top-bar.scss";
@@ -66,6 +67,9 @@ body{
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
+//Typography
+
+
 #siteWrapper{
   display: flex;
   min-height: 100vh;
@@ -83,16 +87,22 @@ body{
 	flex-direction: column;
 }
 
-
-/* Styles specific to this particular page */
-#videoLinks
-{
-	width: 100%;
-	height: 100px;
-	overflow: auto;
+.shareFixed{
+	position: fixed;
+	top: 150px;
+	left: 100px;
+	h6{
+		@include font("Open sans", 600);
+		font-size: 0.7em;
+		color: rgba(0,0,0,.44);
+		text-transform: uppercase;
+	}
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 }
-
-
 
 //DesktopFirst
 @include respond-to($desktop) {

@@ -53,20 +53,63 @@ $(document).ready(function() {
     }
     */
 
+    /*
+    $(function(){
+    	$('#videoLinks').each(function(){
+    			$(this).jScrollPane(
+    				{
+    					showArrows: $(this).is('.arrow'),
+              autoReinitialise: true,
+              mouseWheelSpeed: 50,
+              verticalDragMinHeight: 100,
+        			verticalDragMaxHeight: 100
+    				}
+    			);
+    			var api = $(this).data('jsp');
+    			var throttleTimeout;
+    			$(window).bind('resize',function()
+    				{
+    					// IE fires multiple resize events while you are dragging the browser window which
+    					// causes it to crash if you try to update the scrollpane on every one. So we need
+    					// to throttle it to fire a maximum of once every 50 milliseconds...
+    					if (!throttleTimeout) {
+    						throttleTimeout = setTimeout(
+    							function()
+    							{
+    								api.reinitialise();
+    								throttleTimeout = null;
+    							},
+    							50
+    						);
+    					}
+    				}
+    			);
+    		}
+    	)});
+      */
 
 
-    $(function()
-{
-	var settings = {
-		showArrows: true
-	};
-	var pane = $('#videoLinks')
-	pane.jScrollPane(settings);
-	var api = pane.data('jsp');
-	var i = 1;
 
-});
+/*
+      $('#pageSidebar').hover(function() {
+        $(document).bind('mousewheel DOMMouseScroll',function(){
+            stopWheel();
+        });
+        }, function() {
+            $(document).unbind('mousewheel DOMMouseScroll');
+      });
 
+
+      function stopWheel(e){
+          if(!e){
+              e = window.event;
+          }
+          if(e.preventDefault) {
+              e.preventDefault();
+          }
+          e.returnValue = false;
+      }
+*/
 
     // Decoline effect
     /*
