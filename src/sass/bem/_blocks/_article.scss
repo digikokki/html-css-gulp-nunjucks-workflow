@@ -1,7 +1,9 @@
-.articleContainer{
+.articleContent{
   position: relative;
+  max-width: 845px;
   margin-bottom: 110px;
   padding-bottom: 30px;
+  margin: 0 auto;
   border-bottom: 1px solid #dedede;
   .shareButton{
     position: absolute;
@@ -11,50 +13,37 @@
     font-weight: 300;
     color: $brandColorDark;
   }
-  h3{
-    color: rgba(0, 0, 0, 0.44);
-    font-size: 0.9em;
-    line-height: 1.15;
-    letter-spacing: -.02em;
-  }
-  h1{
-    font-size: 2.5em;
-    @include font("Montserrat", 600);
-    line-height: 1.15;
-    letter-spacing: -.02em;
-  }
-  h2{
-    @include font("Montserrat", 300);
-    font-size: 1.2em;
-    color: rgba(0, 0, 0, 0.44);
-    line-height: 1.15;
-    letter-spacing: -.02em;
-  }
-  h4{
-    font-size: 2em;
-    @include font("Montserrat", 600);
-    margin-bottom: 20px;
-    margin-top: 53px;
-    line-height: 1.15;
-    letter-spacing: -.02em;
-  }
   header{
     margin-bottom: 24px;
   }
-  section{
-    margin-top: 38px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    article{
-
-      flex-basis: 85%;
-      margin-right: 5%;
-    }
-    footer{
-      flex-basis: 15%;
-      color: #999;
-    }
+  h1{/*MainTitle*/
+    @include font("Montserrat", 600);
+    font-size: calc(1.25rem + ((1vw - 3.2px) * 1.0714));
+    /* Where: * 1.0714 = 100 * font_Size_Difference / viewport_Width_Difference */
+    line-height: 1.15;
+    letter-spacing: -.02em;
+  }
+  h2{/*SecondaryTitle*/
+    @include font("Montserrat", 300);
+    font-size: calc(1.0625rem + ((1vw - 3.2px) * 0.5357));
+   /* Where: * 0.5357 = 100 * font_Size_Difference / viewport_Width_Difference */
+    line-height: 1.15;
+    letter-spacing: -.02em;
+  }
+  h3{/*CategoryTitle*/
+    @include font("Montserrat", 500);
+    font-size: calc(0.75rem + ((1vw - 4.8px) * 0.2778));
+    /* Where: * 0.3571 = 100 * font_Size_Difference / viewport_Width_Difference */
+    color: rgba(0, 0, 0, 0.24);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+  }
+  p{
+    @include font("Montserrat", 300);
+    font-size: 1em;
+    line-height: 1.58;
+    letter-spacing: -.003em;
   }
   footer{
     background: none;
@@ -76,12 +65,7 @@
     max-width: 100%;
     margin-bottom: 24px;
   }
-  p{
-    @include font("Crimson Text");
-    font-size: 1.2em;
-    line-height: 1.58;
-    letter-spacing: -.003em;
-  }
+
   ul{
     margin-top: 29px;
     padding: 0;
@@ -114,4 +98,82 @@
     padding: 20px;
     white-space: pre-wrap;
   }
+
+//DesktopFirst
+@include respond-to($desktop) {
+  section{
+    margin-top: 38px;
+    article{
+      flex-basis: 85%;
+      margin-right: 5%;
+    }
+    footer{
+      flex-basis: 15%;
+      color: #999;
+    }
+  }
+}
+  //LaptopFirst
+  @include respond-to($laptop) {
+    section{
+      margin-top: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      article{
+        flex-basis: 85%;
+        margin-right: 5%;
+      }
+      footer{
+        flex-basis: 15%;
+        color: #999;
+      }
+    }
+  }
+
+  //TabletFirst
+  @include respond-to($tablet) {
+    section{
+      margin-top: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      article{
+        flex-basis: 85%;
+        margin-right: 5%;
+      }
+      footer{
+        flex-basis: 15%;
+        color: #999;
+      }
+    }
+  }
+
+  //MobileFirst
+  @include respond-to($mobile) {
+    section{
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      article{
+        flex-basis: 100%;
+        margin-right: 0;
+      }
+      footer{
+        flex-basis: 100%;
+        color: #999;
+      }
+    }
+    p{
+      @include font("Crimson Text");
+      font-size: 1.2em;
+      line-height: 1.58;
+      letter-spacing: -.003em;
+    }
+    img{
+      max-width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+
 }

@@ -9,15 +9,16 @@
   #pageNameHeading{
     font-size: 1rem;
     @include font("Montserrat", 800);
-    margin: 0;
+    width: 845px;
     text-transform: uppercase;
+    margin: 0 auto;
   }
 }
 
 //DesktopFirst
 @include respond-to($desktop) {
   #topBar{
-    position: fixed;
+    position: relative;
     width: inherit;
     background: white;
     z-index: 50;

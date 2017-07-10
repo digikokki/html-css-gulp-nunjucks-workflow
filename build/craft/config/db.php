@@ -16,10 +16,10 @@ return array(
 	'database' => 'digikokki_sivusto',
 
 	// The database username to connect with.
-	'user' => 'adminkokki',
+	'user' => 'root',
 
 	// The database password to connect with.
-	'password' => 'miukukissaq1',
+	'password' => 'root',
 
 	// The prefix to use when naming tables. This can be no more than 5 characters.
 	'tablePrefix' => 'craft',

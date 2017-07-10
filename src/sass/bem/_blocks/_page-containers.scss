@@ -2,19 +2,24 @@
   display: flex;
   flex: 1 0 auto;
   position: relative;
+  height: 100vh;
 }
 
 #pageContent{
   flex: 2;
   position: relative;
   width: 100%;
+  flex-grow: 5;
+  overflow: auto;
+  height: 100vh;
 }
 
 #pageSidebar{
-  flex: 0 0 345px;
+  flex: 0 0 245px;
   border-left: 1px solid #e4e4e4;
   background: #F2F6FB;
   z-index: 60;
+  flex-grow: 1;
 }
 
 #pageSidebarContent{
@@ -27,91 +32,97 @@
   padding-top: 2em;
   padding-left: 100px;
   padding-right: 30px;
-  margin-top: 88px;
 }
 
-#aboutContent{
-  position: fixed;
+#aboutContainer{
   flex: 1;
   background: white;
   width: inherit;
   padding: 2em 1em 0em;
+  width: 100%;
   height: 300px;
-  h3{
-    @include font("Montserrat", 600);
-    font-size: 0.6em;
-    color: rgba(0, 0, 0, 0.44);
-    width: 50%;
-    text-transform: uppercase;
-  }
-  h2{
-    @include font("Montserrat", 600);
-    font-size: 1em;
-    width: 100%;
-  }
-  p{
-    font-size: 13px;
-    width: 65%;
-  }
-  img{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -10;
-    opacity:0.3;
+  #aboutContent{
+    position: relative;
+    width: 440px;
+    h3{
+      @include font("Montserrat", 600);
+      font-size: 0.6em;
+      color: rgba(0, 0, 0, 0.44);
+      width: 50%;
+      text-transform: uppercase;
+    }
+    h2{
+      @include font("Montserrat", 600);
+      font-size: 1em;
+      width: 100%;
+    }
+    p{
+      font-size: 13px;
+      width: 65%;
+    }
+    img{
+      position: absolute;
+      bottom: -169px;
+      left: 260px;
+      opacity:0.3;
+    }
   }
 }
 
-#videoContent{
-  position: fixed;
+
+#videoContainer{
   top: 300px;
   height: 100%;
   padding: 20px;
-  input{
-    width: 100%;
-    border: none;
-    margin-bottom: 20px;
-    padding: 10px;
-  }
-  .jspPane{
-    margin: 0!important;
-    padding: 0!important;
-  }
-  #videoLinks{
-  	width: 100%;
-  	height: calc(70% - 160px);
-  	overflow: auto;
-  }
-  #showAllVideos{
+  #videoContent{
+    input{
+      width: 100%;
+      border: none;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+    .jspPane{
+      margin: 0!important;
+      padding: 0!important;
+    }
+    #videoLinks{
+      width: 100%;
+      height: calc(70% - 160px);
+      overflow: auto;
+    }
+    #showAllVideos{
 
-  }
-  ul{
-    margin: 0;
-    padding: 0;
-    li{
-      list-style: none;
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 10px;
-      .videoThumbnail{
-        margin-right: 15px;
-        img{
-          width: 130px;
+    }
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        list-style: none;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        .videoThumbnail{
+          margin-right: 15px;
+          img{
+            width: 130px;
+          }
         }
-      }
-      .videoInfo{
-        h4{
-          font-size: 0.8em;
-          line-height: 1.3em;
-        }
-        h6{
-          font-size: 0.7em;
-          opacity:0.5;
+        .videoInfo{
+          h4{
+            font-size: 0.8em;
+            line-height: 1.3em;
+          }
+          h6{
+            font-size: 0.7em;
+            opacity:0.5;
+          }
         }
       }
     }
   }
 }
+
+
 
 //DesktopFirst
 @include respond-to($desktop) {
